@@ -1,0 +1,32 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: gateway-skaffold
+# Fabric
+# nginx
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    deploy:
+      helm:
+        releases:
+          - name: ngf
+            # remoteChart: oci://ghcr.io/nginx/charts/nginx-gateway-fabric:2.1.1
+            chartPath: charts/nginx-gateway-fabric/
+            namespace: nginx-gateway
+            createNamespace: true
+          - name: routes
+            chartPath: helm/
+            namespace: default
+            createNamespace: true
+  - name: prod
+    deploy:
+      helm:
+        releases:
+          - name: skaffold
+            chartPath: helm
+            valuesFiles:
+              - helm/values-prod.yaml
+            wait: true
+            upgradeOnChange: true
