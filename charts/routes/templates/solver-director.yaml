@@ -5,13 +5,17 @@ metadata:
 spec:
   parentRefs:
     - name: gateway
-  # hostnames:
-  #   - "solver.example.com"   # replace with your domain
   rules:
     - matches:
         - path:
             type: PathPrefix
-            value: /
+            value: /api/solverdirector
       backendRefs:
         - name: solver-director
           port: 8080
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: "/"   # Strips the path prefix
