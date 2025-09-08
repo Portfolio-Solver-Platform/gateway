@@ -665,7 +665,7 @@ gateways:
           port: 80
           allowedRoutes:
             namespaces:
-              from: Same
+              from: All
         # - name: https
         #   port: 80
         #   protocol: HTTPS
