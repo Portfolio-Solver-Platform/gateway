@@ -17,3 +17,12 @@ This starts a `minikube tunnel` (if it's not already started) and then retrieves
 
 > [!NOTE]
 > The `gateway-nginx` deployment in the `default` namespace can __not__ be uninstalled with `helm` or `skaffold` again once the gateway has been launched. You instead need to manually remove it if you wish to purge the gateway from your Kubernetes cluster. This is because the gateway fabric spawns it, meaning that the automated tooling doesn't know it has been spawned.
+
+### Routes 
+
+The following are the current routes on the gateway:
+- `/grafana/` to [Grafana](https://github.com/Portfolio-Solver-Platform/monitoring)
+- `/keycloak/` to [Keycloak](https://github.com/Portfolio-Solver-Platform/keycloak)
+- `/api/solverdirector` to [Solver Director](https://github.com/Portfolio-Solver-Platform/solver-director)
+
+To add more, you need to add a route in the `/charts/routes` chart.
