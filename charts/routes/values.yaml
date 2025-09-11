@@ -1,1 +1,15 @@
-replicaCount: 1
+gateway:
+  name: gateway
+  namespace: default
+
+grafana:
+  namespace: monitoring
+  name: monitoring-grafana
+  port: 80
+  route: /grafana
+
+keycloak:
+  namespace: keycloak
+  name: keycloak
+  port: 8080
+  route: /keycloak
