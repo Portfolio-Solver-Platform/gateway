@@ -1,8 +1,8 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: keycloak-route
-  namespace: {{ .Values.keycloak.namespace }}
+  name: grafana-route
+  namespace: {{ .Values.grafana.namespace }}
 spec:
   parentRefs:
     - name: {{ .Values.gateway.name }}
@@ -11,7 +11,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: {{ .Values.keycloak.route }}
+            value: {{ .Values.grafana.route }}
       backendRefs:
-        - name: {{ .Values.keycloak.name }}
-          port: {{ .Values.keycloak.port }}
+        - name: {{ .Values.grafana.name }}
+          port: {{ .Values.grafana.port }}
