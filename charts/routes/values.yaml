@@ -12,4 +12,5 @@ keycloak:
   namespace: keycloak
   name: keycloak
   port: 8080
-  route: /keycloak
+  route: /
+  hostname: keycloak.local
