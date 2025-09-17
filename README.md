@@ -22,7 +22,7 @@ For production, use `skaffold run -p prod`.
 
 ### Routes 
 
-The following are the current routes/subdomains on the gateway (note that the written routes are accessed by `local/<path>`):
+The following are the current routes/subdomains on the gateway:
 - `grafana.local` to [Grafana](https://github.com/Portfolio-Solver-Platform/monitoring)
 - `keycloak.local` to [Keycloak](https://github.com/Portfolio-Solver-Platform/keycloak)
 - `/api/solverdirector` to [Solver Director](https://github.com/Portfolio-Solver-Platform/solver-director)
