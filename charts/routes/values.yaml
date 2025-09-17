@@ -13,3 +13,10 @@ keycloak:
   name: keycloak
   port: 8080
   route: /keycloak
+
+harbor:
+  namespace: harbor
+  name: harbor
+  port: 80
+  route: / 
+  hostname: harbor.local
