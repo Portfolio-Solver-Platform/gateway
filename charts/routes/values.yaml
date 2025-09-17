@@ -6,7 +6,8 @@ grafana:
   namespace: monitoring
   name: monitoring-grafana
   port: 80
-  route: /grafana
+  route: /
+  hostname: grafana.local
 
 keycloak:
   namespace: keycloak
