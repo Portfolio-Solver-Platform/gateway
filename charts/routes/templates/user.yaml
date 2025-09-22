@@ -1,8 +1,8 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: solver-director-route
-  namespace: {{ .Values.routes.solverDirector.namespace }}
+  name: user-route
+  namespace: {{ .Values.routes.user.namespace }}
 spec:
   parentRefs:
     - name: {{ .Values.gateway.name }}
@@ -11,10 +11,10 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: {{ .Values.routes.solverDirector.path }}
+            value: {{ .Values.routes.user.path }}
       backendRefs:
-        - name: {{ .Values.routes.solverDirector.serviceName }}
-          port: {{ .Values.routes.solverDirector.port }}
+        - name: {{ .Values.routes.user.serviceName }}
+          port: {{ .Values.routes.user.port }}
       filters:
         - type: URLRewrite
           urlRewrite:
