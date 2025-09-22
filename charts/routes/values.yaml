@@ -22,3 +22,17 @@ harbor:
   port: 80
   route: / 
   hostname: harbor.local
+
+routes:
+  solverDirector:
+    path: /api/solverdirector
+    serviceName: solver-director
+    port: 8080
+    namespace: default
+
+  user:
+    path: /api/user
+    serviceName: user
+    port: 8080
+    namespace: psp
+
