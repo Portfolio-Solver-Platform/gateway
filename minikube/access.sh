@@ -6,12 +6,6 @@ SERVICE="gateway-nginx"
 EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 if [ -z "$EXTERNAL_IP" ]; then
-  echo "❌ No external IP found for gateway."
-  echo "👉 Starting minikube tunnel (requires sudo)..."
-
-  # Start minikube tunnel in the background
-  minikube tunnel >/dev/null 2>&1 &
-
   echo "⏳ Waiting for external IP..."
   while true; do
     EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
