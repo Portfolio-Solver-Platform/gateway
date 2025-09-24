@@ -18,3 +18,16 @@ spec:
       backendRefs:
         - name: {{ .Values.harbor.name }}
           port: {{ .Values.harbor.port }}
+---
+apiVersion: gateway.nginx.org/v1alpha1
+kind: ClientSettingsPolicy
+metadata:
+  name: harbor-client-settings
+  namespace: {{ .Values.harbor.namespace }}
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: harbor-route
+  body:
+    maxSize: "2g"
