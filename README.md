@@ -6,7 +6,7 @@ This is the gateway for PSP.
 
 Run `bootstrap.sh`. This installs some required Kubernetes Custom Resource Definitions (CRDs).
 
-Additionally, you need to launch the gateway using `skaffold dev`. Then, insert the following in your `/etc/hosts` file:
+Additionally, you need to launch the gateway using `skaffold dev` and run `minikube tunnel`. Then, insert the following in your `/etc/hosts` file:
 ```
 <IP> local harbor.local keycloak.local grafana.local prometheus.local
 ```
