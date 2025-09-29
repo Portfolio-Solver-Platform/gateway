@@ -6,7 +6,7 @@ SERVICE="gateway-nginx"
 EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 if [ -z "$EXTERNAL_IP" ]; then
-  echo "❌ Gateway not found"
+  echo "❌ External IP not available for gateway service ($SERVICE)"
 else
   echo "External IP for gateway: $EXTERNAL_IP"
   echo
