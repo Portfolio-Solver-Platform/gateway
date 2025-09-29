@@ -6,15 +6,12 @@ SERVICE="gateway-nginx"
 EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 if [ -z "$EXTERNAL_IP" ]; then
-  echo "⏳ Waiting for external IP..."
-  while true; do
-    EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    if [ -n "$EXTERNAL_IP" ]; then
-      echo "✅ External IP for gateway: $EXTERNAL_IP"
-      break
-    fi
-    sleep 2
-  done
+  echo "❌ Gateway not found"
 else
-  echo "✅ External IP for gateway: $EXTERNAL_IP"
+  echo "External IP for gateway: $EXTERNAL_IP"
+  echo
+  echo "Make sure the following line is in your /etc/hosts file:"
+  echo "$EXTERNAL_IP local harbor.local keycloak.local grafana.local prometheus.local"
+  echo
+  echo "✅ Access: http://local/"
 fi
