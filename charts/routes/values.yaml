@@ -28,7 +28,7 @@ routes:
     path: /api/solverdirector
     serviceName: solver-director
     port: 8080
-    namespace: default
+    namespace: psp
 
   user:
     path: /api/user
