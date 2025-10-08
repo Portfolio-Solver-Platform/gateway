@@ -8,7 +8,7 @@ Run `bootstrap.sh`. This installs some required Kubernetes Custom Resource Defin
 
 Additionally, you need to launch the gateway using `skaffold dev` and run `minikube tunnel`. Then, insert the following in your `/etc/hosts` file:
 ```
-<IP> local harbor.local keycloak.local grafana.local prometheus.local
+<IP> local harbor.local keycloak.local grafana.local prometheus.local 
 ```
 where `<IP>` is the IP that the `minikube/access.sh` script tells you after you execute it.
 
