@@ -21,3 +21,16 @@ spec:
             path:
               type: ReplacePrefixMatch
               replacePrefixMatch: "/"   # Strips the path prefix
+---
+apiVersion: gateway.nginx.org/v1alpha1
+kind: ClientSettingsPolicy
+metadata:
+  name: solver-director-client-settings
+  namespace: {{ .Values.routes.solverDirector.namespace }}
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: solver-director-route
+  body:
+    maxSize: "2g"
