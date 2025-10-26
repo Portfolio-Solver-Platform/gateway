@@ -11,7 +11,7 @@ grafana:
 
 keycloak:
   namespace: keycloak
-  name: keycloak
+  name: keycloak-service
   port: 8080
   route: /
   hostname: keycloak.local
