@@ -16,6 +16,13 @@ keycloak:
   route: /
   hostname: keycloak.local
 
+secretsManager:
+  namespace: secrets-manager
+  name: secrets-manager-openbao
+  port: 8200
+  route: /
+  hostname: secrets.local
+
 harbor:
   namespace: harbor
   name: harbor
