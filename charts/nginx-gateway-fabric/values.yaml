@@ -160,25 +160,25 @@ nginxGateway:
   # -- Autoscaling configuration for the NGINX Gateway Fabric control plane.
   autoscaling:
     # -- Enable or disable Horizontal Pod Autoscaler for the control plane.
-    enable: false
-    # annotations: {}
-    # minReplicas: 1
-    # maxReplicas: 11
-    # targetCPUUtilizationPercentage: 50
-    # targetMemoryUtilizationPercentage: 50
-    # behavior:
-      # scaleDown:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 1
-      #     periodSeconds: 180
-      # scaleUp:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 2
-      #     periodSeconds: 60
+    enable: true
+    annotations: {}
+    minReplicas: 1
+    maxReplicas: 11
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
+    behavior:
+      scaleDown:
+        stabilizationWindowSeconds: 300
+        policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 180
+      scaleUp:
+        stabilizationWindowSeconds: 300
+        policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 60
     # Custom or additional autoscaling metrics. https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#scaling-on-custom-metrics
     # metrics:
     # - type: Pods
@@ -241,24 +241,24 @@ nginx:
   # -- Autoscaling configuration for the NGINX data plane.
   autoscaling:
     # -- Enable or disable Horizontal Pod Autoscaler for the NGINX data plane.
-    enable: false
-    # minReplicas: 1
-    # maxReplicas: 11
-    # targetCPUUtilizationPercentage: 50
-    # targetMemoryUtilizationPercentage: 50
-    # behavior:
-      # scaleDown:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 1
-      #     periodSeconds: 180
-      # scaleUp:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 2
-      #     periodSeconds: 60
+    enable: true
+    minReplicas: 1
+    maxReplicas: 11
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
+    behavior:
+      scaleDown:
+        stabilizationWindowSeconds: 300
+        policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 180
+      scaleUp:
+        stabilizationWindowSeconds: 300
+        policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 60
     # Custom or additional autoscaling metrics. https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#scaling-on-custom-metrics
     # metrics:
     # - type: Pods
