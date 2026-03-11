@@ -16,8 +16,3 @@ sources:
 - https://github.com/nginx/nginx-gateway-fabric/tree/main/charts/nginx-gateway-fabric
 type: application
 version: 2.1.1
-
-dependencies:
-  - name: gateway-crds
-    version: 2.1.1
-    repository: "https://github.com/nginx/nginx-gateway-fabric/config/crd/gateway-api/standard?ref=v2.1.1"
