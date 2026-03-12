@@ -25,7 +25,7 @@ secretsManager:
 
 harbor:
   namespace: harbor
-  name: artifact-registry-harbor-portal
+  name: harbor
   port: 80
   route: / 
   hostname: harbor.local
