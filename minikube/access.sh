@@ -11,7 +11,7 @@ else
   echo "External IP for gateway: $EXTERNAL_IP"
   echo
   echo "Make sure the following line is in your /etc/hosts file:"
-  echo "$EXTERNAL_IP local harbor.local keycloak.local grafana.local secrets.local"
+  echo "$EXTERNAL_IP local keycloak.local grafana.local secrets.local"
   echo
   echo "✅ Access: http://local/"
 fi

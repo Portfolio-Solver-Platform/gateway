@@ -23,13 +23,6 @@ secretsManager:
   route: /
   hostname: secrets.local
 
-harbor:
-  namespace: harbor
-  name: harbor
-  port: 80
-  route: / 
-  hostname: harbor.local
-
 routes:
   solverDirector:
     path: /api/solverdirector
