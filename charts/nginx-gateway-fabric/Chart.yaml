@@ -15,4 +15,4 @@ name: nginx-gateway-fabric
 sources:
 - https://github.com/nginx/nginx-gateway-fabric/tree/main/charts/nginx-gateway-fabric
 type: application
-version: 2.1.1
+version: 2.1.2
