@@ -116,7 +116,7 @@ nginxGateway:
   image:
     # -- The NGINX Gateway Fabric image to use
     repository: ghcr.io/nginx/nginx-gateway-fabric
-    tag: 2.1.1
+    tag: 2.1.1@sha256:cccb919dd5d2e87618c09215b4c73aca3e3ee3fb1a4a459867bcd22fd2db64a9
     # @schema
     # enum:
     #   - Always
@@ -271,7 +271,7 @@ nginx:
   image:
     # -- The NGINX image to use.
     repository: ghcr.io/nginx/nginx-gateway-fabric/nginx
-    tag: 2.1.1
+    tag: 2.1.1@sha256:4c1635a1ce55653e13f7398e646a726a6d909aae51a4993335a9f1bb208285fc
     # @schema
     # enum:
     #   - Always
