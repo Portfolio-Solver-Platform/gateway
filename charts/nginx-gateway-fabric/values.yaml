@@ -27,6 +27,9 @@ nginxGateway:
     labels:
       app: gateway
 
+  podLabels:
+    app: gateway
+
   # -- Set of custom annotations for the NGINX Gateway Fabric pods.
   podAnnotations: {}
 
