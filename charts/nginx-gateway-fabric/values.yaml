@@ -23,13 +23,6 @@ nginxGateway:
   # belong to its class - i.e. have the "gatewayClassName" field resource equal to the class.
   gatewayClassName: nginx
 
-  pod:
-    labels:
-      app: gateway
-
-  podLabels:
-    app: gateway
-
   # -- Set of custom annotations for the NGINX Gateway Fabric pods.
   podAnnotations: {}
 
@@ -485,9 +478,7 @@ nginx:
 
   # -- The pod configuration for the NGINX data plane pod. This is applied globally to all Gateways managed by this
   # instance of NGINX Gateway Fabric.
-  pod:
-    labels:
-      app: gateway
+  pod: {}
     # -- The termination grace period of the NGINX data plane pod.
     # terminationGracePeriodSeconds: 30
 
@@ -659,8 +650,6 @@ certGenerator:
 gateways:
   - name: gateway
     namespace: gateway
-    labels:
-      app: gateway
     # annotations:
     #   annotationKey: annotationValue
     spec:
