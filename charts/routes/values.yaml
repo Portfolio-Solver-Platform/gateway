@@ -1,6 +1,6 @@
 gateway:
   name: gateway
-  namespace: default
+  namespace: gateway
 
 grafana:
   namespace: monitoring

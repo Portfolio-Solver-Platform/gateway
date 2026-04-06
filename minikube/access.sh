@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 SERVICE="gateway-nginx"
+NAMESPACE="gateway"
 
 # Try to get the external IP
-EXTERNAL_IP=$(kubectl get svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+EXTERNAL_IP=$(kubectl get -n "$NAMESPACE" svc "$SERVICE" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 if [ -z "$EXTERNAL_IP" ]; then
   echo "❌ External IP not available for gateway service ($SERVICE)"
