@@ -10,18 +10,20 @@ profiles:
     deploy:
       helm:
         releases:
-            # Gateway
-          - name: ngf
+          - name: gateway
             chartPath: charts/nginx-gateway-fabric/
             namespace: nginx-gateway
             createNamespace: true
-            # Routes
           - name: routes
             chartPath: ./charts/routes/
   - name: prod
     deploy:
       helm:
         releases:
+          - name: gateway
+            chartPath: charts/nginx-gateway-fabric/
+            namespace: nginx-gateway
+            createNamespace: true
           - name: routes
             chartPath: ./charts/routes/
             wait: true
