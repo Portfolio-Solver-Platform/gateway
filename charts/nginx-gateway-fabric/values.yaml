@@ -485,7 +485,9 @@ nginx:
 
   # -- The pod configuration for the NGINX data plane pod. This is applied globally to all Gateways managed by this
   # instance of NGINX Gateway Fabric.
-  pod: {}
+  pod:
+    labels:
+      app: gateway
     # -- The termination grace period of the NGINX data plane pod.
     # terminationGracePeriodSeconds: 30
 
