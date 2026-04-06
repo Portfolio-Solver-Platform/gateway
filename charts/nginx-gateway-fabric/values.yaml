@@ -649,9 +649,9 @@ certGenerator:
 # -- A list of Gateway objects. View https://gateway-api.sigs.k8s.io/reference/spec/#gateway for full Gateway reference.
 gateways:
   - name: gateway
-    namespace: default
-    # labels:
-    #   key: value
+    namespace: gateway
+    labels:
+      app: gateway
     # annotations:
     #   annotationKey: annotationValue
     spec:
