@@ -1,0 +1,8 @@
+grafana:
+  hostname: grafana.local
+
+keycloak:
+  hostname: keycloak.local
+
+secretsManager:
+  hostname: secrets.local
