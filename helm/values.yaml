@@ -1,6 +1,7 @@
 gateway:
   name: gateway
   namespace: gateway
+  # Set "ip" field in production
 
 grafana:
   namespace: monitoring

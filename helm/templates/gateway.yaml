@@ -5,6 +5,13 @@ metadata:
   namespace: {{ .Values.gateway.namespace }}
 spec:
   gatewayClassName: istio
+
+  {{- if .Values.gateway.ipAddress }}
+  addresses:
+  - type: IPAddress
+    value: {{ .Values.gateway.ipAddress | quote }}
+  {{- end }}
+
   listeners:
   - name: http
     protocol: HTTP
