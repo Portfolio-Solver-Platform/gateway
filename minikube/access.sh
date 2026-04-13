@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SERVICE="gateway-nginx"
+SERVICE="gateway-istio"
 NAMESPACE="gateway"
 
 # Try to get the external IP
