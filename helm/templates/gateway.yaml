@@ -6,10 +6,10 @@ metadata:
 spec:
   gatewayClassName: istio
 
-  {{- if .Values.gateway.ipAddress }}
+  {{- if .Values.gateway.ipAddress.enable }}
   addresses:
   - type: IPAddress
-    value: {{ .Values.gateway.ipAddress | quote }}
+    value: {{ .Values.gateway.ipAddress.value | quote }}
   {{- end }}
 
   listeners:
@@ -19,3 +19,59 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+
+{{- if and .Values.gateway.https .Values.gateway.https.enable }}
+ 
+  - name: https-root
+    protocol: HTTPS
+    port: 443
+    hostname: {{ .Values.gateway.hostname | quote }}
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: {{ .Values.gateway.https.certificates.root }}
+        kind: Secret
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-grafana
+    protocol: HTTPS
+    port: 443
+    hostname: {{ .Values.grafana.hostname | quote }}
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: {{ .Values.gateway.https.certificates.grafana }}
+        kind: Secret
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-keycloak
+    protocol: HTTPS
+    port: 443
+    hostname: {{ .Values.keycloak.hostname | quote }}
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: {{ .Values.gateway.https.certificates.keycloak }}
+        kind: Secret
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-secrets
+    protocol: HTTPS
+    port: 443
+    hostname: {{ .Values.secretsManager.hostname | quote }}
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: {{ .Values.gateway.https.certificates.secrets }}
+        kind: Secret
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  {{- end }}

@@ -1,3 +1,9 @@
+gateway:
+  ipAddress:
+    enable: false
+  https:
+    enable: false
+
 grafana:
   hostname: grafana.local
 

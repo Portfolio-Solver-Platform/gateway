@@ -1,7 +1,17 @@
 gateway:
   name: gateway
   namespace: gateway
-  # Set "ip" field in production
+  hostname: local
+  ipAddress:
+    enable: true
+    value: 0.0.0.0
+  https:
+    enable: true
+    certificates:
+      root: root-tls-cert
+      grafana: metrics-tls-cert
+      keycloak: auth-tls-cert
+      secrets: secrets-tls-cert
 
 grafana:
   namespace: monitoring
