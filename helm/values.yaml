@@ -5,6 +5,8 @@ gateway:
   ipAddress:
     enable: true
     value: 0.0.0.0
+  http:
+    listenerName: http
   https:
     enable: true
     certificates:
