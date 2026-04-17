@@ -1,6 +1,19 @@
 gateway:
   name: gateway
   namespace: gateway
+  hostname: local
+  ipAddress:
+    enable: true
+    value: 0.0.0.0
+  http:
+    listenerName: http
+  https:
+    enable: true
+    certificates:
+      root: root-tls-cert
+      grafana: metrics-tls-cert
+      keycloak: auth-tls-cert
+      secrets: secrets-tls-cert
 
 grafana:
   namespace: monitoring
