@@ -13,13 +13,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /realms/psp/
-        - path:
-            type: PathPrefix
-            value: /resources/
-        - path:
-            type: PathPrefix
-            value: /js/
+            value: {{ .Values.keycloak.route }}
       backendRefs:
         - name: {{ .Values.keycloak.name }}
           port: {{ .Values.keycloak.port }}
