@@ -12,7 +12,7 @@ else
   echo "External IP for gateway: $EXTERNAL_IP"
   echo
   echo "Make sure the following line is in your /etc/hosts file:"
-  echo "$EXTERNAL_IP local keycloak.local metrics.local secrets.local"
+  echo "$EXTERNAL_IP local keycloak.local metrics.local"
   echo
   echo "✅ Access: http://local/"
 fi

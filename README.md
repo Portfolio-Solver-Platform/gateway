@@ -6,15 +6,11 @@ This is the gateway for PSP.
 
 Run `bootstrap.sh`. This installs some required Kubernetes Custom Resource Definitions (CRDs).
 
-Additionally, you need to launch the gateway using `skaffold dev` and run `minikube tunnel`. Then, insert the following in your `/etc/hosts` file:
-```
-<IP> local keycloak.local metrics.local secrets.local 
-```
-where `<IP>` is the IP that the `minikube/access.sh` script tells you after you execute it.
-
 ## Usage
 
-Run `skaffold dev` to launch the gateway in development mode.
+In development, you need to launch the gateway using `skaffold dev` and run `minikube tunnel`.
+Then, run `minikube/access.sh` and follow the instructions it gives you.
+
 For production, use `skaffold run -p prod`.
 
 ### Routes 
