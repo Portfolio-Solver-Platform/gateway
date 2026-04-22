@@ -17,6 +17,9 @@ spec:
         - path:
             type: PathPrefix
             value: /resources/
+        - path:
+            type: PathPrefix
+            value: /js/
       backendRefs:
         - name: {{ .Values.keycloak.name }}
           port: {{ .Values.keycloak.port }}
