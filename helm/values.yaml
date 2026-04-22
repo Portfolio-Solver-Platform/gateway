@@ -13,7 +13,6 @@ gateway:
       root: root-tls-cert
       grafana: metrics-tls-cert
       keycloak: auth-tls-cert
-      secrets: secrets-tls-cert
 
 grafana:
   namespace: monitoring
