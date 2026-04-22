@@ -4,7 +4,7 @@ This is the gateway for PSP.
 
 ## First Time Setup
 
-Run `bootstrap.sh`. This installs some required Kubernetes Custom Resource Definitions (CRDs).
+Run `bootstrap.sh`.
 
 ## Usage
 
