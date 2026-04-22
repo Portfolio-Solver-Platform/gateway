@@ -61,17 +61,4 @@ spec:
       namespaces:
         from: All
 
-  - name: https-secrets
-    protocol: HTTPS
-    port: 443
-    hostname: {{ .Values.secretsManager.hostname | quote }}
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: {{ .Values.gateway.https.certificates.secrets }}
-        kind: Secret
-    allowedRoutes:
-      namespaces:
-        from: All
-
   {{- end }}

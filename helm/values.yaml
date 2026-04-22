@@ -13,7 +13,6 @@ gateway:
       root: root-tls-cert
       grafana: metrics-tls-cert
       keycloak: auth-tls-cert
-      secrets: secrets-tls-cert
 
 grafana:
   namespace: monitoring
@@ -28,13 +27,6 @@ keycloak:
   port: 8080
   route: /
   hostname: keycloak.local
-
-secretsManager:
-  namespace: secrets-manager
-  name: secrets-manager-openbao
-  port: 8200
-  route: /
-  hostname: secrets.local
 
 routes:
   solverDirector:
